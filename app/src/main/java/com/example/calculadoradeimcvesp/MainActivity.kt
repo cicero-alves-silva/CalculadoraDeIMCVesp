@@ -33,5 +33,15 @@ class MainActivity : AppCompatActivity() {
                 //ABRIR A TELA DE CÁLCULO
             }
         }
+
+        binding.includeAppBar.materialToolbar.setOnMenuItemClickListener { menuItem ->
+            when(menuItem.itemId) {
+                R.id.miDireitosAutorais -> {
+                    //ABRIR TELA PARA MOSTRAR OS CRÉDITO DO APP
+                    true
+                }
+                else -> false
+            }
+        }
     }
 }
