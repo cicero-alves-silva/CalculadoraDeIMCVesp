@@ -1,20 +1,30 @@
 package com.example.calculadoradeimcvesp
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.example.calculadoradeimcvesp.databinding.ActivityCalculoResultadoBinding
 
 class CalculoResultadoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.activity_calculo_resultado)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+        val binding = ActivityCalculoResultadoBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        binding.btCalcular.setOnClickListener { view ->
+            binding.tvResultado.text = ""
+            val peso = binding.tietPeso.text.toString().replace(",", ".").trim().toDoubleOrNull()
+            val altura = binding.tietAltura.text.toString().replace(",", ".").trim().toDoubleOrNull()
+
+            var erroDeValidacao = false
+            if (peso == null || peso <= 0) {
+                binding.tilPeso.error = "Digite um peso válido"
+                erroDeValidacao = true
+            } else binding.tilPeso.error = ""
+
+            if (altura == null || altura <= 0) {
+                binding.tilAltura.error = "Digite uma altura válida"
+                erroDeValidacao = true
+            } else binding.tilAltura.error = ""
         }
     }
 }
