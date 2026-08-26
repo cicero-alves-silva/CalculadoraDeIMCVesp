@@ -40,6 +40,8 @@ class MainActivity : AppCompatActivity() {
             when(menuItem.itemId) {
                 R.id.miDireitosAutorais -> {
                     //ABRIR A TELA DOS CRÉDITOS DA APP
+                    val intent = Intent(this, DireitosAutoraisActivity::class.java)
+                    startActivity(intent)
                     true
                 }
                 else -> false

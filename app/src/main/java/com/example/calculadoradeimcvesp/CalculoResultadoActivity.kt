@@ -1,5 +1,6 @@
 package com.example.calculadoradeimcvesp
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.calculadoradeimcvesp.databinding.ActivityCalculoResultadoBinding
@@ -58,6 +59,8 @@ class CalculoResultadoActivity : AppCompatActivity() {
             when(menuItem.itemId) {
                 R.id.miDireitosAutorais -> {
                     //ABRIR A TELA DOS CRÉDITOS DA APP
+                    val intent = Intent(this, DireitosAutoraisActivity::class.java)
+                    startActivity(intent)
                     true
                 }
                 else -> false
