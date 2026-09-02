@@ -86,6 +86,7 @@
         android:layout_height="70dp"
         android:layout_marginTop="8dp"
         android:backgroundTint="@color/corAzulEscuro"
+        android:drawableLeft="@drawable/icone_calcular_24"
         android:text="CALCULAR"
         android:textSize="24sp"
         android:textStyle="bold"

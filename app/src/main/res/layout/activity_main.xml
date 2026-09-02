@@ -76,6 +76,7 @@
         android:layout_height="60dp"
         android:layout_marginTop="16dp"
         android:backgroundTint="@color/corAzulEscuro"
+        android:drawableLeft="@drawable/icone_ok_24"
         android:text="OK"
         android:textSize="24sp"
         android:textStyle="bold"
